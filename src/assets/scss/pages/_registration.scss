@@ -1,0 +1,20 @@
+.index-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 90px;
+    margin-bottom: 40px;
+}
+
+.index-main__jumbotron {
+    &__title {
+        text-align: center;
+        font-size: 30px;
+        width: 100vw;
+        margin-bottom: 40px;
+        font-size: 40px;
+    }
+    &__title__span {
+        font-family: "Anton";
+    }
+}
