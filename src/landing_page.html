@@ -2,61 +2,62 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Team 2 TomorrowDevs" />
-  <meta name="keywords" content="image, categories, image categorizer, cat, jpg, png, images, browse images" />
-  <meta name="description" content="Upload your photos, and let CAT.Image analyze it." />
-  <!-- OG Tags -->
-  <meta property="og:locale" content="en" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Cat.Image | The image categorizer" />
-  <meta property="og:description" content="Upload your photos, and let CAT.Image analyze it." />
-  <meta property="og:url" content="#" />
-  <meta property="og:image" content="/assets/images/graphics/app_manifest.jpg" />
-  <meta property="og:site_name" content="Cat.Image | The image categorizer" />
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="large_image" />
-  <meta name="twitter:site" content="@TomorrowDevs" />
-  <meta name="twitter:creator" content="@TomorrowDevs" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta charset="UTF-8" />
-  <link rel="canonical" href="#" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" />
-  <link rel="icon" href="/assets/images/logo.svg" />
-  <link rel="stylesheet" href="/css/dropzone.css" />
-  <link rel="preload" href="/css/main.css" as="style" />
-  <link rel="stylesheet" href="/css/main.css" />
-  <title>Cat.Image | The image categorizer | Select your file</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Team 2 TomorrowDevs" />
+    <meta name="keywords" content="image, categories, image categorizer, cat, jpg, png, images, browse images" />
+    <meta name="description" content="Upload your photos, and let CAT.Image analyze it." />
+    <!-- OG Tags -->
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cat.Image | The image categorizer" />
+    <meta property="og:description" content="Upload your photos, and let CAT.Image analyze it." />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="/assets/images/graphics/app_manifest.jpg" />
+    <meta property="og:site_name" content="Cat.Image | The image categorizer" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="large_image" />
+    <meta name="twitter:site" content="@TomorrowDevs" />
+    <meta name="twitter:creator" content="@TomorrowDevs" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="#" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" />
+    <link rel="icon" href="/assets/images/logo.svg" />
+    <link rel="stylesheet" href="/css/dropzone.css" />
+    <link rel="preload" href="/css/main.css" as="style" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Cat.Image | The image categorizer | Select your file</title>
 </head>
 
 <body class="body">
-  <nav class="select-nav">
-    <div class="select-nav__logo">
-      <img src="/assets/images/logo.svg" alt="Cat Image Logo" />
-    </div>
-    <div class="select-nav__profile">
-      <div class="select-nav__profile__pic">
-        <img src="/assets/images/propic.png" alt="propic" />
-      </div>
-      <div class="select-nav__profile__name">
-        <h3>John Doe</h3>
-      </div>
-      <ul class="select-nav__profile__dropdown">
-        <li><a href=""> Docs</a></li>
-        <li><a href="/pages/about.html"> About</a></li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="select-nav">
+        <div class="select-nav__logo">
+            <img src="/assets/images/logo.svg" alt="Cat Image Logo" />
+        </div>
+        <div class="select-nav__profile">
+            <div class="select-nav__profile__pic">
+                <img src="/assets/images/propic.png" alt="propic" />
+            </div>
+            <div class="select-nav__profile__name">
+                <h3>John Doe</h3>
+            </div>
+            <ul class="select-nav__profile__dropdown">
+                <li><a href=""> Docs</a></li>
+                <li><a href="/pages/about.html"> About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- SELECT AREA -->
-  <main class="select">
-    <div class="select__area">
-      <form action="" class="select__area__form" method="post" enctype="multipart/form-data">
-        <input id="browse" type="file" onchange="previewFiles()" multiple />
-        <div id="preview"></div>
-        <input class="btn select__area__button" type="submit" value="submit" />
-      </form>
-    </div>
-  </main>
+    <!-- SELECT AREA -->
+    <main class="select">
+        <div class="select__area">
+            <form action="" class="select__area__form" method="post" enctype="multipart/form-data">
+                <input id="browse" type="file" onchange="previewFiles()" multiple />
+                <div id="preview"></div>
+                <input class="btn select__area__button" type="submit" value="submit" />
+            </form>
+        </div>
+    </main>
+
 </body>

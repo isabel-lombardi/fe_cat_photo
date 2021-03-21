@@ -15,13 +15,13 @@
         font-size: 40px;
     }
     &__title__span {
-        @include fontAnton;
+        font-family: "Anton";
     }
 }
 
 .index-main__login {
     &__title {
-        @include fontAnton;
+        font-family: "Anton";
     }
     &__subtitle {
         font-weight: 300;
