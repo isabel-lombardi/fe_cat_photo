@@ -9,8 +9,8 @@ module.exports = {
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
     index: './src/index.js',
-    /* registration: './src/registration.js',
-    landing_page: './src/landing_page.js', */
+    registration: './src/registration.js',
+    landing_page: './src/landing_page.js',
   },
   // https://webpack.js.org/concepts/output/
   output: {
@@ -96,7 +96,7 @@ module.exports = {
         chunks: ['index'],
         filename: 'index.html'
     }),
-    /* new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: './src/registration.html',
       inject: true,
       chunks: ['registration'],
@@ -107,7 +107,7 @@ module.exports = {
         inject: true,
         chunks: ['landing_page'],
         filename: 'landing_page.html'
-    }), */
+    }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
       chunkFilename: "[id].[contenthash].css"
