@@ -15,11 +15,18 @@
         font-size: 40px;
     }
     &__title__span {
-        font-family: "Anton";
+        @include fontAnton;
     }
 }
 
 .index-main__login {
+    &__title {
+        @include fontAnton;
+    }
+    &__subtitle {
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
     &__form {
         display: flex;
         flex-direction: column;
