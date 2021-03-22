@@ -8,23 +8,27 @@
 }
 
 .index-main__jumbotron {
+    width: 308px;
+    height: 124px;
+    margin-bottom: 700px;
     &__title {
+        @include fontRoboto;
         text-align: center;
-        font-size: 30px;
+        font-size: 32px;
         width: 100vw;
         margin-bottom: 40px;
-        font-size: 40px;
+        color: $primary-color;
     }
     &__title__span {
-        // font-family: "Anton";
-        @include font-anton;
+        @include fontAnton;
     }
 }
 
 .index-main__login {
+    width: 318.92px;
+    height: 488px;
     &__title {
-        // font-family: "Anton";
-        @include font-anton;
+        @include fontAnton;
     }
     &__subtitle {
         font-weight: 300;
@@ -55,6 +59,11 @@
         width: 150px;
         height: 40px;
         margin-bottom: 40px;
-        color: #29BC6E;
+        color: $primary-color;
+        @include btnBgColor;
     }
+}
+
+.index-footer {
+    @include displayNone;
 }

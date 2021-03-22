@@ -1,3 +1,8 @@
+$primary-color: #FFFFFF;
+@mixin displayNone {
+    display: none;
+}
+
 @mixin fontAnton {
     font-family: "Anton";
 }
@@ -7,7 +12,7 @@
 }
 
 @mixin bodyBgColor {
-    background: linear-gradient(180deg, #000000 0%, #080E10 3.65%, #0D1719 6.25%, #263E45 29.69%, #79C0D3 100%);
+    background: linear-gradient(180deg, #0A223D 0%, #79C0D3 100%);
 }
 
 @mixin btnBgColor {
