@@ -1,3 +1,4 @@
+@import '../utils/mixins';
 .index-main {
     display: flex;
     justify-content: space-evenly;
@@ -15,16 +16,14 @@
         font-size: 40px;
     }
     &__title__span {
-        /* font-family: "Anton"; */
-        margin-top: 1px;
+        // font-family: "Anton";
         @include font-anton;
     }
 }
 
 .index-main__login {
     &__title {
-        /* font-family: "Anton"; */
-        margin-top: 1px;
+        // font-family: "Anton";
         @include font-anton;
     }
     &__subtitle {
