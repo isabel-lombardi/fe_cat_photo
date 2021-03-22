@@ -1,3 +1,23 @@
-@mixin font-anton {
+@mixin fontAnton {
     font-family: "Anton";
+}
+
+@mixin fontRoboto {
+    font-family: "Roboto";
+}
+
+@mixin bodyBgColor {
+    background: linear-gradient(180deg, #000000 0%, #080E10 3.65%, #0D1719 6.25%, #263E45 29.69%, #79C0D3 100%);
+}
+
+@mixin btnBgColor {
+    background: linear-gradient(180deg, #29BC6E 0%, rgba(41, 188, 110, 0.67) 63.02%);
+}
+
+@mixin formBgColor {
+    background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.36) 14.91%, rgba(255, 255, 255, 0) 114.91%);
+}
+
+@mixin inputFieldBgColor {
+    background: rgba(255, 255, 255, 0.67);
 }
