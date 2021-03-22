@@ -48,9 +48,9 @@
     <!-- SELECT AREA -->
     <main class="select">
         <div class="select__area">
-            <form action="" class="select__area__form" method="post" enctype="multipart/form-data">
-                <input id="browse" type="file" onchange="previewFiles()" multiple />
-                <div id="preview"></div>
+            <form action="" class="" method="post" enctype="multipart/form-data">
+                <label for="browse" class="select__area__form"></label>
+                <input id="browse" name="files[]"" type="file" onchange="" multiple accept="image/*" />
                 <input class="btn select__area__button" type="submit" value="submit" />
             </form>
         </div>
