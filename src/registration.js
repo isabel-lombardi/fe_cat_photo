@@ -1,5 +1,7 @@
 import './styles.scss'
 
+console.log("PLACEHOLDER: Manuel was here, first console log in registration JS");
+
 const form = document.querySelector(".index-main__login__form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
