@@ -6,19 +6,11 @@ Moreover it puts the images into the slider once they're put inside the box
 */
 
 // Landing Page JS
-
-const spinnerLoader = document.querySelector("#spinner");
-const modal = document.querySelectorAll(".modal");
+const modal = document.querySelector(".modal");
 
 //slide variables
 const mainWrapper = document.querySelector(".main-wrapper");
 const slideContainer = document.querySelector(".slideshow-container");
-const exitBtn = document.querySelector(".remove-button");
-
-//History search variables
-const searchHistoryWrapper = document.querySelector(".history-search");
-const searchHistoryButton = document.querySelector(".load-images-history__submit");
-const searchHistorySpan = document.querySelector(".history-search--close");
 
 //upload dropzone variables
 const loadImageSquare = document.querySelector(".select__area__form");
@@ -129,11 +121,11 @@ function loadImage(src) {
     // here the error message if the images are more than 10
     if(loadImageSquare.children.length >= maxImages){
       //Array.from(loadImageSquare.children)[maxImages-1].remove();
-      /*messageError.style.display = "inline-block";
-      messageText.innerHTML = "no more than 10";*/
+      messageError.style.display = "inline-block";
+      messageText.innerHTML = "no more than 10";
     } 
     else {
-      //messageError.style.display = "none";
+      messageError.style.display = "none";
       imageCreation();
     //if the "this" that comes from the selectImage function (from gallery) is undefined it means that I call the drag and drop so I assign the dataURL value to image
       if(imageLoaded == undefined) {
@@ -190,7 +182,7 @@ function createSlide(e){
           element.parentNode.removeChild(element);
     })}
     // the modal with silder appear
-    modal[1].style.display = "block";
+    modal.style.display = "block";
     mainWrapper.style.display = "block";
     
     //here I took all the images loaded inside the dropzone and loop through them
@@ -285,22 +277,6 @@ function showSlides(n) {
       slides[slideIndex-1].style.display = "block";
     }
   
-  }
-
-
-  /* The following block of instructions is what helps the history search modal to work correctly. 
-  
-  What's the history search modal? Basically the modal where user will be able to find all his/her previous img searches*/
-
-
-  // When the user clicks on the button, the modal opens
-  searchHistoryButton.onclick = function(){
-    searchHistoryWrapper.style.display = 'block';
-  }
-
-  // When the user clicks on the span, the modal closes
-  searchHistorySpan.onclick = function(){
-    searchHistoryWrapper.style.display = 'none';
   }
 
 
