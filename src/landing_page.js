@@ -14,27 +14,27 @@ const slideContainer = document.querySelector(".slideshow-container");
 
 //upload dropzone variables
 const loadImageSquare = document.querySelector(".select__area__form");
-
+const form = document.querySelector(".select__area__container");
+const btnSubmit = document.querySelector(".select__area__button");
 //error message
 const messageError = document.querySelector(".message");
 const messageText = document.querySelector(".message__text");
 const closeMessage = document.querySelector(".close");
-const upload = document.querySelector(".select__area__button");
+const upload = document.querySelector(".select__area__container");
 let newImage;
 let errorFormat;
-
+const inputImage = document.querySelector("#browse");
 (function init() {
-  const inputImage = document.querySelector("#browse");
+  
  
 
   inputImage.addEventListener("change", selectImage);
   // message error if the button ok is pressed the box disappear
 
-  upload.addEventListener("click", createSlide);
+  upload.addEventListener("submit", uploadForm);
   //exitBtn.addEventListener("click", exitSlider);
 })();
 
-const historySearch = document.querySelector(".history-search");
 
 
 // dragAndDrop initialize function
@@ -63,7 +63,7 @@ const historySearch = document.querySelector(".history-search");
 // transform the files in an array and call the previewFile function to display them
     function handleFiles(files) {
       files = [...files]
-      files.forEach(previewFile)
+      files.forEach(previewFile)  
     }
 
 //the preview function the che fileReader object and search the dataURL of the file dropped
@@ -134,7 +134,7 @@ function loadImage(src) {
         newImage.src = this.result;
       }
     // when the button is clicked and an image is uploaded the button result appear
-      upload.style.display = "inline-block";
+    btnSubmit.style.display = "inline-block";
     // here you can remove the image you want by clicking on X 
       Array.from(loadImageSquare.children).forEach(function(element) {
           element.querySelector(".removeImage").addEventListener("click", function(e) {
@@ -142,7 +142,7 @@ function loadImage(src) {
               element.remove();
               // when remove button is clicked and the container has 0 elements the result button has display none
               if(loadImageSquare.children.length == 0) {
-                upload.style.display = "none";
+                btnSubmit.style.display = "none";
               }
           });
       });
@@ -172,43 +172,87 @@ function imageCreation() {
   loadImageSquare.appendChild(imageBox);
 }
 
-        
-function createSlide(e){
+
+
+//Fetch
+
+
+
+
+
+// slider        
+function uploadForm(e){
     e.preventDefault();
+    
+    const formData = new FormData(this);
+  
+    for(const file of inputImage.files) {
+      formData.append("image", file.name);
+    }
+    
+    formData.append("user", "joe");
+    formData.append("id", 3);
+
+    for (var value of formData.values()) {
+      console.log(value);
+   }
+
+   fetch('/upload', {
+    headers: {
+      'Authorization': 'TOKEN'
+    },
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.error(error)
+  })
+
+  createSlider();
+    
       /* if there are more than 0 slides already in the slider (maybe because i uploaded images before)
       it will remove them*/
-    if(document.querySelectorAll(".slides-image-container").length > 0) {
-        document.querySelectorAll(".slides-image-container").forEach(function(element) {
-          element.parentNode.removeChild(element);
-    })}
-    // the modal with silder appear
-    modal.style.display = "block";
-    mainWrapper.style.display = "block";
     
-    //here I took all the images loaded inside the dropzone and loop through them
-    let readyImages = document.querySelectorAll(".load-images-gallery__ready-image");
-    
-    readyImages.forEach(function(element,i) {
-      const slides = document.createElement("div");
-      slides.classList.add("slides-image-container");
-      // based on Manuel code for the slider I had to give to the first the display block style
-    if(i == 0) {
-      slides.style.display = "block";
-    } 
+}
 
-    const image = new Image();
-    const result = document.createElement("div");
-    result.classList.add("result-wrapper");
 
-    image.classList.add("image");
-    // here I give to the image on the slider the same src that comes from the images on dropzone
-    image.src = element.src;
+function createSlider() {
+  if(document.querySelectorAll(".slides-image-container").length > 0) {
+    document.querySelectorAll(".slides-image-container").forEach(function(element) {
+      element.parentNode.removeChild(element);
+  })}
+  // the modal with silder appear
+  modal.style.display = "block";
+  mainWrapper.style.display = "block";
+  
+  //here I took all the images loaded inside the dropzone and loop through them
+  let readyImages = document.querySelectorAll(".load-images-gallery__ready-image");
+  
+  readyImages.forEach(function(element,i) {
+    const slides = document.createElement("div");
+    slides.classList.add("slides-image-container");
+    // based on Manuel code for the slider I had to give to the first the display block style
+  if(i == 0) {
+    slides.style.display = "block";
+  } 
 
-    slides.appendChild(image);
-    slides.appendChild(result);
-    slides.children[0].style.display = "block";
-    slideContainer.appendChild(slides);
-  })
+  const image = new Image();
+  const result = document.createElement("div");
+  result.classList.add("result-wrapper");
+
+  image.classList.add("image");
+  // here I give to the image on the slider the same src that comes from the images on dropzone
+  image.src = element.src;
+
+  slides.appendChild(image);
+  slides.appendChild(result);
+  slides.children[0].style.display = "block";
+  slideContainer.appendChild(slides);
+})
 }
 
 // button to exit from the slider when the modal appear
