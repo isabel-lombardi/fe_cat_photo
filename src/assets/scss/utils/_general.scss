@@ -1,0 +1,4 @@
+@import '../utils/mixins';
+.index-body {
+    @include bodyBgColor;
+}

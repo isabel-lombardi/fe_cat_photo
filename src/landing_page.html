@@ -22,22 +22,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta charset="UTF-8" />
     <link rel="canonical" href="#" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css" />
+
     <link rel="icon" href="/assets/images/logo.svg" />
-    <link rel="stylesheet" href="/css/dropzone.css" />
-    <link rel="preload" href="/css/main.css" as="style" />
-    <link rel="stylesheet" href="/css/main.css" />
     <title>Cat.Image | The image categorizer | Select your file</title>
 </head>
 
-<body class="body">
+<body class="index-body">
     <nav class="select-nav">
         <div class="select-nav__logo">
-            <img src="/assets/images/logo.svg" alt="Cat Image Logo" />
+            <img src="assets/images/logo.svg" alt="Cat Image Logo" />
         </div>
         <div class="select-nav__profile">
             <div class="select-nav__profile__pic">
-                <img src="/assets/images/propic.png" alt="propic" />
+                <img src="assets/images/propic.png" alt="propic" />
             </div>
             <div class="select-nav__profile__name">
                 <h3>John Doe</h3>
@@ -52,12 +49,29 @@
     <!-- SELECT AREA -->
     <main class="select">
         <div class="select__area">
-            <form action="" class="select__area__form" method="post" enctype="multipart/form-data">
-                <input id="browse" type="file" onchange="previewFiles()" multiple />
-                <div id="preview"></div>
+            <form action="" class="" method="post" enctype="multipart/form-data">
+                <label for="browse" class="select__area__form"></label>
+                <input id="browse" name="files[]"" type="file" onchange="" multiple accept="image/*" />
                 <input class="btn select__area__button" type="submit" value="submit" />
             </form>
         </div>
-    </main>
 
+        <div class="message">
+            <span class="message__text">No more than 10 images allowed</span>
+            <span class="close">OK</span>
+        </div>
+    </main>
+    <!-- Slideshow container -->
+    <div class="main-wrapper modal">
+        <!-- Slider images with number and caption text -->
+        <div class="slideshow-container">
+           
+        </div>
+        <!-- Next and previous buttons -->
+        <div class="buttons">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+
+    </div>
 </body>
