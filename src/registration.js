@@ -1,31 +1,31 @@
 import './styles.scss'
 
-const form = document.querySelector(".index-main__login__form");
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
+const form = document.querySelector('.index-main__registration__form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
 // Show input error message
 function showError(input, message) {
   const formControl = input.parentElement;
-  formControl.className = "registration error";
-  const small = formControl.querySelector("small");
+  formControl.className = 'registration error';
+  const small = formControl.querySelector('small');
   small.innerText = message;
 }
 
 // Show success outline
 function showSuccess(input) {
   const formControl = input.parentElement;
-  formControl.className = "registration success";
+  formControl.className = 'registration success';
 }
 
 // Check email is valid
 function isValidEmail(input) {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re = /^(([^<>()[\]\\.,;:\s@']+(\.[^<>()[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
   } else {
-    showError(input, "Email is invalid");
+    showError(input, 'Email is invalid');
   }
 }
 
@@ -66,10 +66,21 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Event listeners
-form.addEventListener("submit", function (e) {
-  // e.preventDefault();
+// Event listeners - Fetch must be tested (24/03/2021), Manuel
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
+  const formData = new FormData(this);
+  fetch('signup.php' /*will be changed with correct URL tomorrow*/,{
+    method: 'POST',
+    body: formData,
+  }).then((response) => {
+    return response.json();
+  })
+  .catch((error) => {
+      console.log('Request failed', error);
+  });
 });
+
