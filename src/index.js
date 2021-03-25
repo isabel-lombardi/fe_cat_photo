@@ -24,3 +24,22 @@ const email = document.getElementById("email");
 // form.addEventListener("submit", function (e) {
 //   e.preventDefault();
 // });
+
+// =================== #18 form validation
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  checkLength(username, 3, 12);
+  isValidEmail(email);
+  checkPasswordStrength(password);
+  const formData = new FormData(this);
+  fetch("signup.php" /*will be changed with correct URL tomorrow*/, {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.log("Request failed", error);
+    });
+});
