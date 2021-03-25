@@ -1,68 +1,99 @@
 .index-main {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 90px;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 90px;
+  margin-bottom: 40px;
 }
 
 .index-main__jumbotron {
-    width: 308px;
-    height: 124px;
-    margin-bottom: 700px;
-    &__title {
-        @include fontRoboto;
-        text-align: center;
-        font-size: 32px;
-        width: 100vw;
-        margin-bottom: 40px;
-        color: $primary-color;
-    }
-    &__title__span {
-        @include fontAnton;
-    }
+  width: 308px;
+  height: 124px;
+  margin-bottom: 700px;
+  &__title {
+    @include fontRoboto;
+    text-align: center;
+    font-size: 32px;
+    width: 100vw;
+    margin-bottom: 40px;
+    color: $primary-color;
+  }
+  &__title__span {
+    @include fontAnton;
+  }
 }
 
 .index-main__login {
-    width: 318.92px;
-    height: 488px;
-    &__title {
-        @include fontAnton;
-    }
-    &__subtitle {
-        font-weight: 300;
-        margin-bottom: 40px;
-    }
-    &__form {
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.36) 14.91%, rgba(255, 255, 255, 0) 114.91%);
-        align-items: center;
-    }
-    &__form__text,
-    &__form__password {
-        margin-bottom: 30px;
-        border-radius: 10px;
-        height: 40px;
-        width: 300px;
-        background-color: rgba(255, 255, 255, 0.67);
-        text-align: center;
-        font-size: 18px;
-        outline: none;
-    }
-    &__form__label {
-        margin: -10px auto 10px auto;
-    }
-    &__form__button {
-        font-size: 18px;
-        width: 150px;
-        height: 40px;
-        margin-bottom: 40px;
-        color: $primary-color;
-        @include btnBgColor;
-    }
+  width: 318.92px;
+  height: 420px;
+  &__title {
+    @include fontAnton;
+  }
+  &__subtitle {
+    font-weight: 300;
+    margin-bottom: 40px;
+  }
+  &__sign-up {
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+      152.97deg,
+      rgba(255, 255, 255, 0.36) 14.91%,
+      rgba(255, 255, 255, 0) 114.91%
+    );
+    align-items: center;
+    height: 100%;
+  }
+  &__form__text,
+  &__form__password,
+  .login-username,
+  .login-password {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.67);
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+  }
+  &__form__label {
+    margin: -10px auto 10px auto;
+  }
+  &__form__button {
+    font-size: 18px;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 40px;
+    color: $primary-color;
+    @include btnBgColor;
+  }
 }
 
 .index-footer {
-    @include displayNone;
+  @include displayNone;
+}
+.login-form__psw-recovery {
+  p {
+    font-weight: bold;
+    a {
+      color: #551a8b;
+    }
+  }
+}
+.login-section__psw-recovery-field {
+  height: 25px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.67);
+  text-align: center;
+  font-size: 18px;
+  outline: none;
 }
