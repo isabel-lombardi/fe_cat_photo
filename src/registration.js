@@ -68,6 +68,7 @@ function getFieldName(input) {
 
 // Event listeners - Fetch must be tested (24/03/2021), Manuel
 form.addEventListener('submit', (e) => {
+  
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
