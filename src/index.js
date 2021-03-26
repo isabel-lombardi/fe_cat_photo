@@ -32,8 +32,8 @@ form.addEventListener('submit', (e) => {
   isValidEmail(email);
   checkPasswordStrength(password); */
   const formData = new FormData(this);
-  fetch('https://cors-anywhere.herokuapp.com/https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
-    method: 'POST',  
+  fetch('https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
+    method: 'post',  
     headers: {
       "Content-Type": "application/json",
     },
