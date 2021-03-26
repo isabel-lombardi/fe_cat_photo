@@ -1,29 +1,30 @@
 .index-main {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 90px;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 90px;
+  margin-bottom: 40px;
 }
 
 .index-main__jumbotron {
-    width: 308px;
-    height: 124px;
-    margin-bottom: 700px;
-    &__title {
-        @include fontRoboto;
-        text-align: center;
-        font-size: 32px;
-        width: 100vw;
-        margin-bottom: 40px;
-        color: $primary-color;
-    }
-    &__title__span {
-        @include fontAnton;
-    }
+  width: 308px;
+  height: 124px;
+  margin-bottom: 700px;
+  &__title {
+    @include fontRoboto;
+    text-align: center;
+    font-size: 32px;
+    width: 100vw;
+    margin-bottom: 40px;
+    color: $primary-color;
+  }
+  &__title__span {
+    @include fontAnton;
+  }
 }
 
 .index-main__login {
+
     width: 318.92px;
     height: 488px;
     &__title {
@@ -64,8 +65,26 @@
         color: $primary-color;
         @include btnBgColor;
     }
+
 }
 
 .index-footer {
-    @include displayNone;
+  @include displayNone;
+}
+.login-form__psw-recovery {
+  p {
+    font-weight: bold;
+    a {
+      color: #551a8b;
+    }
+  }
+}
+.login-section__psw-recovery-field {
+  height: 25px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.67);
+  text-align: center;
+  font-size: 18px;
+  outline: none;
 }
