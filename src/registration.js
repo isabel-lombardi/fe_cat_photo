@@ -87,7 +87,10 @@ form.addEventListener('submit', (e) => {
       password: password.value,
     }),
   }).then((response) => {
-    return response.json();
+    return response.json();    
+  })
+  .then((response) => {
+    console.log(response);
   })
   .catch((error) => {
       console.log('Request failed', error);
