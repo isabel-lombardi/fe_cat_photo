@@ -28,9 +28,12 @@
     height: 488px;
     &__title {
         @include fontAnton;
+        @include whiteAlignCenter;
+        margin-bottom: -20px;
     }
     &__subtitle {
-        font-weight: 300;
+        @include fontRoboto;
+        @include whiteAlignCenter;
         margin-bottom: 40px;
     }
     &__form {

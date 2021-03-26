@@ -5,10 +5,20 @@ $primary-color: #FFFFFF;
 
 @mixin fontAnton {
     font-family: "Anton";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 53px;
 }
 
 @mixin fontRoboto {
     font-family: "Roboto";
+    line-height: 28px;
+    font-weight: 300;
+}
+
+@mixin whiteAlignCenter {
+    text-align: center;
+    color: $primary-color;
 }
 
 @mixin bodyBgColor {

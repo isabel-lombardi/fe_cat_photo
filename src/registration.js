@@ -1,6 +1,6 @@
 import './styles.scss'
 
-const form = document.querySelector('.index-main__registration__form');
+const form = document.querySelector('#index-main__registration__form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
