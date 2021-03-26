@@ -32,9 +32,15 @@ form.addEventListener('submit', (e) => {
   isValidEmail(email);
   checkPasswordStrength(password); */
   const formData = new FormData(this);
-  fetch('https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
-    method: 'POST',
-    body: formData,
+  fetch('https://cors-anywhere.herokuapp.com/https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    }),
   })
     .then((response) => {
       return response.json();
