@@ -1,4 +1,6 @@
 $primary-color: #FFFFFF;
+$secondary-color: black;
+$tertiary-color: rgba(255, 255, 255, 0.67);
 @mixin displayNone {
     display: none;
 }
@@ -10,10 +12,19 @@ $primary-color: #FFFFFF;
     line-height: 53px;
 }
 
-@mixin fontRoboto {
+@mixin fontRoboto24px {
     font-family: "Roboto";
     line-height: 28px;
+    font-size: 24px;
     font-weight: 300;
+}
+
+@mixin fontRoboto18px {
+    font-family: "Roboto";
+    line-height: 21px;
+    font-size: 18px;
+    font-weight: 400;
+    color: $secondary-color;
 }
 
 @mixin whiteAlignCenter {
@@ -33,6 +44,14 @@ $primary-color: #FFFFFF;
     background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.36) 14.91%, rgba(255, 255, 255, 0) 114.91%);
 }
 
-@mixin inputFieldBgColor {
-    background: rgba(255, 255, 255, 0.67);
+@mixin inputField {
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border-color: $tertiary-color;
+    height: 40px;
+    width: 300px;
+    background-color: $tertiary-color;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
 }

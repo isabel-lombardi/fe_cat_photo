@@ -7,20 +7,22 @@
 }
 
 .index-main__jumbotron {
-  width: 308px;
-  height: 124px;
-  margin-bottom: 700px;
-  &__title {
-    @include fontRoboto;
-    text-align: center;
-    font-size: 32px;
-    width: 100vw;
-    margin-bottom: 40px;
-    color: $primary-color;
-  }
-  &__title__span {
-    @include fontAnton;
-  }
+
+    width: 308px;
+    height: 124px;
+    margin-bottom: 700px;
+    &__title {
+        @include fontRoboto24px;
+        text-align: center;
+        font-size: 32px;
+        width: 100vw;
+        margin-bottom: 40px;
+        color: $primary-color;
+    }
+    &__title__span {
+        @include fontAnton;
+    }
+
 }
 
 .index-main__login {
@@ -33,7 +35,7 @@
         margin-bottom: -20px;
     }
     &__subtitle {
-        @include fontRoboto;
+        @include fontRoboto24px;
         @include whiteAlignCenter;
         margin-bottom: 40px;
     }
@@ -43,18 +45,11 @@
         background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.36) 14.91%, rgba(255, 255, 255, 0) 114.91%);
         align-items: center;
     }
-    &__form__text,
-    &__form__password {
-        margin-bottom: 30px;
-        border-radius: 10px;
-        height: 40px;
-        width: 300px;
-        background-color: rgba(255, 255, 255, 0.67);
-        text-align: center;
-        font-size: 18px;
-        outline: none;
+    &__form__field {
+        @include inputField;
     }
     &__form__label {
+        @include fontRoboto18px;
         margin: -10px auto 10px auto;
     }
     &__form__button {
