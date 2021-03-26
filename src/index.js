@@ -28,9 +28,9 @@ const email = document.getElementById('email');
 // =================== #18 form validation
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  checkLength(username, 3, 12);
+  /* checkLength(username, 3, 12);
   isValidEmail(email);
-  checkPasswordStrength(password);
+  checkPasswordStrength(password); */
   const formData = new FormData(this);
   fetch('https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
     method: 'POST',
