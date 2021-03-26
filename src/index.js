@@ -32,7 +32,7 @@ form.addEventListener('submit', (e) => {
   isValidEmail(email);
   checkPasswordStrength(password);
   const formData = new FormData(this);
-  fetch('signup.php' /*will be changed with correct URL tomorrow*/, {
+  fetch('https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
     method: 'POST',
     body: formData,
   })
