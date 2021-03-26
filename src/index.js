@@ -1,4 +1,4 @@
-import "./styles.scss";
+import './styles.scss';
 
 // Login JS
 
@@ -6,40 +6,40 @@ import "./styles.scss";
   By clicking on the link, the field is shown or hidden */
 
 function toggleInputField() {
-  var input = document.querySelector(".login-section__psw-recovery-field");
-  input.classList.toggle("login-section__psw-recovery--display-block");
+  var input = document.querySelector('.login-section__psw-recovery-field');
+  input.classList.toggle('login-section__psw-recovery--display-block');
 }
 
-var link = document.querySelector(".login-section__psw-recovery-link");
+var link = document.querySelector('.login-section__psw-recovery-link');
 
-link.addEventListener("click", toggleInputField);
+link.addEventListener('click', toggleInputField);
 
 // Show error message functionality
-const form = document.querySelector(".login-form");
-const username = document.getElementById("username");
-const password = document.getElementById("password");
-const email = document.getElementById("email");
+const form = document.querySelector('#index-main__login__form');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const email = document.getElementById('email');
 
 // Event listeners
-// form.addEventListener("submit", function (e) {
+// form.addEventListener('submit', function (e) {
 //   e.preventDefault();
 // });
 
 // =================== #18 form validation
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
   const formData = new FormData(this);
-  fetch("signup.php" /*will be changed with correct URL tomorrow*/, {
-    method: "POST",
+  fetch('https://cat-photo.herokuapp.com/login' /*will be changed with correct URL tomorrow*/, {
+    method: 'POST',
     body: formData,
   })
     .then((response) => {
       return response.json();
     })
     .catch((error) => {
-      console.log("Request failed", error);
+      console.log('Request failed', error);
     });
 });
