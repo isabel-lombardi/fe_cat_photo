@@ -73,10 +73,19 @@ form.addEventListener('submit', (e) => {
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
-  const formData = new FormData(this);
+  // const formData = new FormData(this);
   fetch('https://cat-photo.herokuapp.com/signup' /*will be changed with correct URL tomorrow*/,{
     method: 'POST',
-    body: formData,
+    /* method: 'POST',
+    body: formData, */
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    }),
   }).then((response) => {
     return response.json();
   })
