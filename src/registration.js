@@ -90,7 +90,7 @@ form.addEventListener('submit', (e) => {
     console.log(response);
   })
   .then((response) => {
-    window.location = 'http://localhost:8080/';
+    window.location = 'https://cat-photo.netlify.app/';
   })
   .catch((error) => {
       console.log('Request failed', error);
