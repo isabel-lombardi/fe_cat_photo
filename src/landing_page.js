@@ -197,19 +197,19 @@ function uploadForm(e){
       console.log(value);
    }
 
-   fetch('/upload', {
+   fetch('https://cat-photo.herokuapp.com/upload/', {
     headers: {
       'Authorization': 'TOKEN'
     },
     method: 'POST',
     body: formData
   })
-  .then(response => response.json())
+  .then(uploadResponse => uploadResponse.json())
   .then(data => {
     console.log(data)
   })
   .catch(error => {
-    console.error(error)
+    console.log(error)
   })
 
   createSlider();
