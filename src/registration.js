@@ -88,14 +88,14 @@ registrationForm.addEventListener('submit', (e) => {
   .then((registrationResponse) => {
     console.log(registrationResponse);
   })
-  .then((registrationResponse) => {
-    window.location = 'https://cat-photo.netlify.app/';
-  })
+  /* .then((registrationResponse) => {
+    window.location = 'https://cat-photo.netlify.app/';    
+  }) */
   .catch((error) => {
       console.log('Request failed', error);
   });
   
 });
 
-export default registrationResponse;
+export default registration;
 

@@ -1,5 +1,5 @@
 import './styles.scss';
-import * as registrationResponse from './registration';
+import registration from './registration';
 
 // Login JS
 
