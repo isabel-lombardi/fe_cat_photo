@@ -1,5 +1,4 @@
 import './styles.scss';
-import './registration.js'
 
 // Login JS
 
@@ -33,7 +32,6 @@ form.addEventListener('submit', (e) => {
     },
     body: JSON.stringify({
       username: username.value,
-      email: email.value,
       password: password.value,
     }),
   })
