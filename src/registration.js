@@ -73,11 +73,8 @@ form.addEventListener('submit', (e) => {
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
-  // const formData = new FormData(this);
-  fetch('https://cat-photo.herokuapp.com/signup/' /*will be changed with correct URL tomorrow*/,{
+  fetch('https://cat-photo.herokuapp.com/signup/',{
     method: 'post',
-    /* method: 'POST',
-    body: formData, */
     headers: {
       "Content-Type": "application/json",
     },
@@ -95,5 +92,6 @@ form.addEventListener('submit', (e) => {
   .catch((error) => {
       console.log('Request failed', error);
   });
+  window.location = 'https://cat-photo.netlify.app/';
 });
 

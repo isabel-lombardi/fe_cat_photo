@@ -14,7 +14,6 @@ var link = document.querySelector('.login-section__psw-recovery-link');
 
 link.addEventListener('click', toggleInputField);
 
-// Show error message functionality
 const form = document.querySelector('#index-main__login__form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
