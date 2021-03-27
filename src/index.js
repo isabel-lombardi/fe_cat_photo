@@ -31,7 +31,7 @@ password.value = newUserPassword;
 
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);

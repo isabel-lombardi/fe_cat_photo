@@ -68,7 +68,7 @@ function getFieldName(input) {
 
 // Event listeners - Fetch must be tested (24/03/2021), Manuel
 registrationForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
