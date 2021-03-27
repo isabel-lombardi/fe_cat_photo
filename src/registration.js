@@ -58,7 +58,7 @@ function checkPasswordStrength(input) {
       )} must have alpha-numeric, symbols and upper and lower case characters`
     );
   }
-  console.log(input.value);
+  console.log("Password ok");
 }
 
 // Get field name

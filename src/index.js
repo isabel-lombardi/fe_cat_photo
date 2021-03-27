@@ -20,11 +20,6 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const email = document.getElementById('email');
 
-// Event listeners
-// form.addEventListener('submit', function (e) {
-//   e.preventDefault();
-// });
-
 // =================== #18 form validation
 form.addEventListener('submit', (e) => {
   e.preventDefault();
