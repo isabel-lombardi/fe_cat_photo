@@ -89,9 +89,9 @@ registrationForm.addEventListener('submit', (e) => {
   .then((registrationResponse) => {
     console.log(registrationResponse);
   })
-  /* .then((registrationResponse) => {
+  .then((registrationResponse) => {
     window.location = 'https://cat-photo.netlify.app/';    
-  }) */
+  })
   .catch((error) => {
       console.log('Request failed', error);
   });
