@@ -1,4 +1,5 @@
 import './styles.scss';
+import './registration'
 
 // Login JS
 
@@ -14,17 +15,25 @@ var link = document.querySelector('.login-section__psw-recovery-link');
 
 link.addEventListener('click', toggleInputField);
 
-const form = document.querySelector('#index-main__login__form');
+const newUserName = JSON.parse(registrationResponse.username);
+const newUserPassword = JSON.parse(registrationResponse.password);
+username.value == newUserName;
+password.value == newUserPassword;
+
+const loginForm = document.querySelector('#index-main__login__form');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-const email = document.getElementById('email');
+const email = document.getElementById('email'); 
+
+username.value == newUserName;
+password.value == newUserPassword;
 
 // Event Listener for Login function
-form.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  /* checkLength(username, 3, 12);
+  checkLength(username, 3, 12);
   isValidEmail(email);
-  checkPasswordStrength(password); */  
+  checkPasswordStrength(password);
   fetch('https://cat-photo.herokuapp.com/login/', {
     method: 'post',  
     headers: {
@@ -35,13 +44,13 @@ form.addEventListener('submit', (e) => {
       password: password.value,
     }),
   })
-    .then((response) => {
-      return response.json();
+    .then((loginResponse) => {
+      return loginResponse.json();
     })
-    .then((response) => {
-      console.log(response);
+    .then((loginResponse) => {
+      console.log(loginResponse);
     })
-    .then((response) => {
+    .then((loginResponse) => {
       window.location = 'https://cat-photo.netlify.app/landing_page.html';
     })
     .catch((error) => {
