@@ -66,7 +66,8 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Event listeners - Fetch must be tested (24/03/2021), Manuel
+export function registration(){
+  // Event listeners - Fetch must be tested (24/03/2021), Manuel
 registrationForm.addEventListener('submit', (e) => {
   // e.preventDefault();
   checkLength(username, 3, 12);
@@ -96,6 +97,7 @@ registrationForm.addEventListener('submit', (e) => {
   });
   
 });
+}
 
-export default registration;
+
 
