@@ -1,6 +1,6 @@
 import './styles.scss'
 
-const form = document.querySelector('#index-main__registration__form');
+const registrationForm = document.querySelector('#index-main__registration__form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -67,7 +67,7 @@ function getFieldName(input) {
 }
 
 // Event listeners - Fetch must be tested (24/03/2021), Manuel
-form.addEventListener('submit', (e) => {
+registrationForm.addEventListener('submit', (e) => {
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
@@ -82,18 +82,14 @@ form.addEventListener('submit', (e) => {
       email: email.value,
       password: password.value,
     }),
-  }).then((response) => {
-    return response.json();    
+  }).then((registrationResponse) => {
+    return registrationResponse.json();    
   })
-  .then((response) => {
-    console.log(response);
+  .then((registrationResponse) => {
+    console.log(registrationResponse);
   })
-  .then((response) => {
+  .then((registrationResponse) => {
     window.location = 'https://cat-photo.netlify.app/';
-    const newUserName = JSON.parse(response.username);
-    const newUserPassword = JSON.parse(response.password);
-    username.value == newUserName;
-    password.value == newUserPassword;
   })
   .catch((error) => {
       console.log('Request failed', error);
