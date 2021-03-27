@@ -89,9 +89,12 @@ form.addEventListener('submit', (e) => {
   .then((response) => {
     console.log(response);
   })
+  .then((response) => {
+    window.location = 'https://cat-photo.netlify.app/';
+  })
   .catch((error) => {
       console.log('Request failed', error);
   });
-  window.location = 'https://cat-photo.netlify.app/';
+  
 });
 
