@@ -1,5 +1,5 @@
 import './styles.scss';
-import registration from './registration';
+import {registration} from './registration.js';
 
 // Login JS
 
