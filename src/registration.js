@@ -97,3 +97,5 @@ registrationForm.addEventListener('submit', (e) => {
   
 });
 
+export default registrationResponse;
+
