@@ -1,4 +1,5 @@
 import './styles.scss';
+import './registration.js'
 
 // Login JS
 
@@ -19,14 +20,13 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const email = document.getElementById('email');
 
-// =================== #18 form validation
+// Event Listener for Login function
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   /* checkLength(username, 3, 12);
   isValidEmail(email);
-  checkPasswordStrength(password); */
-  const formData = new FormData(this);
-  fetch('https://cat-photo.herokuapp.com/login/' /*will be changed with correct URL tomorrow*/, {
+  checkPasswordStrength(password); */  
+  fetch('https://cat-photo.herokuapp.com/login/', {
     method: 'post',  
     headers: {
       "Content-Type": "application/json",
@@ -42,6 +42,9 @@ form.addEventListener('submit', (e) => {
     })
     .then((response) => {
       console.log(response);
+    })
+    .then((response) => {
+      window.location = 'https://cat-photo.netlify.app/landing_page.html';
     })
     .catch((error) => {
       console.log('Request failed', error);

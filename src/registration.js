@@ -68,7 +68,6 @@ function getFieldName(input) {
 
 // Event listeners - Fetch must be tested (24/03/2021), Manuel
 form.addEventListener('submit', (e) => {
-  
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
@@ -91,6 +90,10 @@ form.addEventListener('submit', (e) => {
   })
   .then((response) => {
     window.location = 'https://cat-photo.netlify.app/';
+    const newUserName = JSON.parse(response.username);
+    const newUserPassword = JSON.parse(response.password);
+    username.value == newUserName;
+    password.value == newUserPassword;
   })
   .catch((error) => {
       console.log('Request failed', error);
