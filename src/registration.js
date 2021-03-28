@@ -58,7 +58,7 @@ function checkPasswordStrength(input) {
       )} must have alpha-numeric, symbols and upper and lower case characters`
     );
   }
-  console.log("Password ok");
+  console.log('Password ok');
 }
 
 // Get field name
@@ -76,7 +76,8 @@ registrationForm.addEventListener('submit', (e) => {
   fetch('https://cat-photo.herokuapp.com/signup/',{
     method: 'post',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
+      'Authorization': 'TOKEN'
     },
     body: JSON.stringify({
       username: username.value,
@@ -90,8 +91,11 @@ registrationForm.addEventListener('submit', (e) => {
     console.log(registrationResponse);
   })
   .then((registrationResponse) => {
-    window.location = 'https://cat-photo.netlify.app/landing_page.html';    
+    localStorage.setItem(registrationResponse.id, 'id');
   })
+  /* .then((registrationResponse) => {
+    window.location = 'https://cat-photo.netlify.app/landing_page.html';    
+  }) */
   .catch((error) => {
       console.log('Request failed', error);
   });

@@ -38,7 +38,8 @@ loginForm.addEventListener('submit', (e) => {
   fetch('https://cat-photo.herokuapp.com/login/', {
     method: 'post',  
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
+      'Authorization': 'TOKEN'
     },
     body: JSON.stringify({
       username: username.value,
