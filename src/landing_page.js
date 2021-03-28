@@ -16,6 +16,7 @@ const slideContainer = document.querySelector(".slideshow-container");
 const loadImageSquare = document.querySelector(".select__area__form");
 const form = document.querySelector(".select__area__container");
 const btnSubmit = document.querySelector(".select__area__button");
+let imageUrl = [];
 //error message
 const messageError = document.querySelector(".message");
 const messageText = document.querySelector(".message__text");
@@ -23,6 +24,7 @@ const closeMessage = document.querySelector(".close");
 const upload = document.querySelector(".select__area__container");
 let newImage;
 let errorFormat;
+
 
 const inputImage = document.querySelector("#browse");
 (function init() {
@@ -126,8 +128,10 @@ function loadImage(src) {
       imageCreation();
     //if the "this" that comes from the selectImage function (from gallery) is undefined it means that I call the drag and drop so I assign the dataURL value to image
       if(imageLoaded == undefined) {
+        imageUrl.push(src.result.split(";base64,")[1]);
         newImage.src = src;
       } else {
+        imageUrl.push(imageLoaded.result.split(";base64,")[1]);
         newImage.src = this.result;
       }
     // when the button is clicked and an image is uploaded the button result appear
@@ -176,7 +180,7 @@ function uploadForm(e){
     const formData = new FormData(this);
   
     for(const file of inputImage.files) {
-      formData.append("image", file.name);
+      formData.append("image", imageUrl);
     }
     
     formData.append("user", "joe");
