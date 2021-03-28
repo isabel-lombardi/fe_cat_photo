@@ -23,11 +23,10 @@ const closeMessage = document.querySelector(".close");
 const upload = document.querySelector(".select__area__container");
 let newImage;
 let errorFormat;
+
 const inputImage = document.querySelector("#browse");
 (function init() {
   
- 
-
   inputImage.addEventListener("change", selectImage);
   // message error if the button ok is pressed the box disappear
 
@@ -84,8 +83,6 @@ const inputImage = document.querySelector("#browse");
       }
     }
 })();
-
-
 
 // image selection from gallery function
 function selectImage() {
@@ -172,15 +169,7 @@ function imageCreation() {
   loadImageSquare.appendChild(imageBox);
 }
 
-
-
-//Fetch
-
-
-
-
-
-// slider        
+//Fetch       
 function uploadForm(e){
     e.preventDefault();
     
