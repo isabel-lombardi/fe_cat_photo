@@ -67,7 +67,7 @@ function getFieldName(input) {
 }
 
 export function registration(){
-  // Event listeners - Fetch must be tested (24/03/2021), Manuel
+  // Event listeners
 registrationForm.addEventListener('submit', (e) => {
   // e.preventDefault();
   checkLength(username, 3, 12);
@@ -90,7 +90,7 @@ registrationForm.addEventListener('submit', (e) => {
     console.log(registrationResponse);
   })
   .then((registrationResponse) => {
-    window.location = 'https://cat-photo.netlify.app/';    
+    window.location = 'https://cat-photo.netlify.app/landing_page.html';    
   })
   .catch((error) => {
       console.log('Request failed', error);
