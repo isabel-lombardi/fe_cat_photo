@@ -76,7 +76,7 @@ registrationForm.addEventListener('submit', (e) => {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'TOKEN'
+      // 'Authorization': 'TOKEN'
     },
     body: JSON.stringify({
       username: username.value,
@@ -90,6 +90,10 @@ registrationForm.addEventListener('submit', (e) => {
   .then((registrationResponseJson) => {
     console.log(registrationResponseJson);
     return localStorage.setItem('id', registrationResponseJson.id);    
+  })
+  .then((registrationResponseJsonTwo) => {    
+    console.log(registrationResponseJsonTwo);
+    return window.location = ('https://cat-photo.netlify.app/');   
   })
   .catch((error) => {
       console.log('Request failed', error);
