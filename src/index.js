@@ -40,9 +40,13 @@ loginForm.addEventListener('submit', (e) => {
     .then((loginResponseFromBackend) => {
       return loginResponseFromBackend.json();
     })
+    .then((loginResponseToCreateToken) => {
+      console.log(loginResponseToCreateToken);
+      return localStorage.setItem('token', loginResponseToCreateToken.token);
+    })
     .then((loginResponseToTakeToken) => {
       console.log(loginResponseToTakeToken);
-      // return localStorage.getItem('token', loginResponseToTakeToken.token);
+      return localStorage.getItem('token', loginResponseToTakeToken.token);
     })
     /* .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
