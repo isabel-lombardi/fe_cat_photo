@@ -30,7 +30,6 @@ loginForm.addEventListener('submit', (e) => {
     method: 'post',  
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'TOKEN' // Not sure about this line 29/3/2021
     },
     body: JSON.stringify({
       username: username.value,
@@ -48,10 +47,10 @@ loginForm.addEventListener('submit', (e) => {
       console.log(loginResponseToTakeToken);
       return localStorage.getItem('token', loginResponseToTakeToken.token);
     })
-    /* .then((loginResponseForRedirect) => {
+    .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
       window.location = 'https://cat-photo.netlify.app/landing_page.html';
-    }) */
+    })
     .catch((error) => {
       console.log('Request failed', error);
     });
