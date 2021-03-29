@@ -186,7 +186,7 @@ function uploadForm(e){
       console.log(value);
    }
 
-   fetch('https://cat-photo.herokuapp.com/upload/', {
+   fetch('https://cat-photo.herokuapp.com/upload/', { // fake commit
     headers: {
       'Authorization': 'Token'
     },
