@@ -22,15 +22,14 @@ const email = document.getElementById('email');
 
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
   fetch('https://cat-photo.herokuapp.com/login/', { // fetch not working
-    method: 'post',  
+    method: 'POST',  
     headers: {
-      'Content-Type': 'application/json',
-      //'Authorization': 'TOKEN'
+      'Authorization': 'TOKEN'
     },
     body: JSON.stringify({
       username: username.value,
