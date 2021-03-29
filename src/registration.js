@@ -66,7 +66,7 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-export function registration(){
+function registration(){
   // Event listeners
 registrationForm.addEventListener('submit', (e) => {
   // e.preventDefault();
@@ -84,19 +84,16 @@ registrationForm.addEventListener('submit', (e) => {
       email: email.value,
       password: password.value,
     }),
+  })  
+  .then((registrationResponseFromBackend) => {
+    return registrationResponseFromBackend.json();    
   })
-  .then((registrationResponse) => {
-    localStorage.setItem(registrationResponse.id, 'id')
+  .then((registrationResponseJson) => {
+    console.log(registrationResponseJson);
+    return localStorage.setItem('id', registrationResponseJson.id);    
   })
-  .then((registrationResponse) => {
-    return registrationResponse.json();    
-  })
-  .then((registrationResponse) => {
-    console.log(registrationResponse);
-  })
-  
-  /* .then((registrationResponse) => {
-    window.location = 'https://cat-photo.netlify.app/landing_page.html';    
+  /* .then((registrationResponseJson) => {
+    return window.location = 'https://cat-photo.netlify.app/landing_page.html';
   }) */
   .catch((error) => {
       console.log('Request failed', error);
@@ -104,6 +101,8 @@ registrationForm.addEventListener('submit', (e) => {
   
 });
 }
+
+registration();
 
 
 
