@@ -21,7 +21,7 @@ const password = document.getElementById('password');
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
   // e.preventDefault();
-  fetch('https://cat-photo.herokuapp.com/login/', { // fetch not working
+  fetch('https://cat-photo.herokuapp.com/login/', {
     method: 'post',  
     headers: {
       'Content-Type': 'application/json',
