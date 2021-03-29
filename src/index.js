@@ -39,19 +39,24 @@ loginForm.addEventListener('submit', (e) => {
     method: 'post',  
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'TOKEN'
+      'Authorization': 'TOKEN' // Not sure about this line 29/3/2021
     },
     body: JSON.stringify({
       username: username.value,
       password: password.value,
     }),
   })
-    .then((loginResponse) => {
-      return loginResponse.json();
+    .then((loginResponseFromBackend) => {
+      return loginResponseFromBackend.json();
     })
-    /* .then((loginResponse) => {
+    .then((loginResponseForToken) => {
+      console.log(loginResponseForToken);
+      return localStorage.setItem('token', loginResponseForToken.token);
+    })
+    .then((loginResponseForRedirect) => {
+      console.log(loginResponseForRedirect);
       window.location = 'https://cat-photo.netlify.app/landing_page.html';
-    })    */ 
+    })
     .catch((error) => {
       console.log('Request failed', error);
     });
