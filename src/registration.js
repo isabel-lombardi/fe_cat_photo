@@ -72,7 +72,7 @@ registrationForm.addEventListener('submit', (e) => {
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
-  fetch('https://cat-photo.herokuapp.com/signup/',{
+  fetch('https://cat-photo.herokuapp.com/signup/', { 
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
