@@ -69,7 +69,7 @@ function getFieldName(input) {
 function registration(){
   // Event listeners
 registrationForm.addEventListener('submit', (e) => {
-  // e.preventDefault();
+  e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
