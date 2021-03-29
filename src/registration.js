@@ -91,9 +91,6 @@ registrationForm.addEventListener('submit', (e) => {
     console.log(registrationResponseJson);
     return localStorage.setItem('id', registrationResponseJson.id);    
   })
-  /* .then((registrationResponseJson) => {
-    return window.location = 'https://cat-photo.netlify.app/landing_page.html';
-  }) */
   .catch((error) => {
       console.log('Request failed', error);
   });
