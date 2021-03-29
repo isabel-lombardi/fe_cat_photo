@@ -20,7 +20,7 @@ const password = document.getElementById('password');
 
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+  //e.preventDefault();
   fetch('https://cat-photo.herokuapp.com/login/', { // fetch not working
     method: 'post',  
     headers: {
