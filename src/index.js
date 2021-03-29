@@ -37,6 +37,7 @@ loginForm.addEventListener('submit', (e) => {
     }),
   })
     .then((loginResponseFromBackend) => {
+      console.log(loginResponseFromBackend);
       return loginResponseFromBackend.json();
     })
     .then((loginResponseToCreateToken) => {
@@ -47,10 +48,10 @@ loginForm.addEventListener('submit', (e) => {
       console.log(loginResponseToTakeToken);
       return localStorage.getItem('token', loginResponseToTakeToken.token);
     })
-    .then((loginResponseForRedirect) => {
+    /* .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
       window.location = 'https://cat-photo.netlify.app/landing_page.html';
-    })
+    }) */
     .catch((error) => {
       console.log('Request failed', error);
     });
