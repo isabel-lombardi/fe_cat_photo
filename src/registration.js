@@ -66,10 +66,9 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-function registration(){
-  // Event listeners
+// Event listeners
 registrationForm.addEventListener('submit', (e) => {
-  // e.preventDefault();
+  e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
   checkPasswordStrength(password);
@@ -100,9 +99,7 @@ registrationForm.addEventListener('submit', (e) => {
   });
   
 });
-}
 
-registration();
 
 
 
