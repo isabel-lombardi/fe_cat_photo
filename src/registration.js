@@ -84,15 +84,17 @@ registrationForm.addEventListener('submit', (e) => {
       email: email.value,
       password: password.value,
     }),
-  }).then((registrationResponse) => {
+  })
+  .then((registrationResponse) => {
+    localStorage.setItem(registrationResponse.id, 'id')
+  })
+  .then((registrationResponse) => {
     return registrationResponse.json();    
   })
   .then((registrationResponse) => {
     console.log(registrationResponse);
   })
-  .then((registrationResponse) => {
-    localStorage.setItem(registrationResponse.id, 'id');
-  })
+  
   /* .then((registrationResponse) => {
     window.location = 'https://cat-photo.netlify.app/landing_page.html';    
   }) */
