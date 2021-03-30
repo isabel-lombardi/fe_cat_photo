@@ -180,7 +180,7 @@ function uploadForm(e){
       formData.append('image', file);
     }
     
-    formData.append('user', localStorage.getItem('usermame'));
+    formData.append('user', localStorage.getItem('username'));
     formData.append('id', localStorage.getItem('id'));
 
     for (var value of formData.values()) {
