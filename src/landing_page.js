@@ -175,13 +175,13 @@ function uploadForm(e){
     e.preventDefault();
     
     const formData = new FormData(this);
-    // load-images-gallery__ready-image
+    
     for(const file of inputImage.files) {
       formData.append('image', file);
     }
     
-    formData.append('user', localStorage.getItem('token', 'undefined'));
-    formData.append('id', localStorage.getItem('id', 'undefined'));
+    formData.append('user', localStorage.getItem('usermame'));
+    formData.append('id', localStorage.getItem('id'));
 
     for (var value of formData.values()) {
       console.log(value);
