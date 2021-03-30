@@ -169,6 +169,7 @@ function imageCreation() {
   loadImageSquare.appendChild(imageBox);
 }
 
+console.log(localStorage.getItem("token"));
 //Fetch       
 function uploadForm(e){
     e.preventDefault();
