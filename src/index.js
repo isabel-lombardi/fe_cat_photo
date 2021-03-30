@@ -21,7 +21,6 @@ const password = document.getElementById('password');
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
   localStorage.removeItem('token');
-  console.log(localStorage.getItem("token"));
   e.preventDefault();
   fetch('https://cat-photo.herokuapp.com/login/', { 
     method: 'post',  
@@ -44,7 +43,7 @@ loginForm.addEventListener('submit', (e) => {
     })    
     .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
-      //window.location.href = 'landing_page.html';
+      window.location.href = 'landing_page.html';
     }) 
     .catch((error) => {
       console.log('Request failed', error);
