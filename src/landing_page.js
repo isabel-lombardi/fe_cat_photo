@@ -179,8 +179,6 @@ function uploadForm(e){
     for(const file of inputImage.files) {
       formData.append('image', file);
     }
-    
-    formData.append('id', localStorage.getItem('id'));
 
     for (var value of formData.values()) {
       console.log(value);
