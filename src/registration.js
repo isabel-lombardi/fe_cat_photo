@@ -93,7 +93,7 @@ registrationForm.addEventListener('submit', (e) => {
     console.log(registrationResponseJson);
     let idUser = parseInt(registrationResponseJson.id);
     localStorage.setItem('id', idUser);   
-    console.log(typeof localStorage.getItem("id")); 
+    console.log(typeof idUser); 
     //return window.location = ('https://cat-photo.netlify.app/'); 
   })
   /*.then((registrationResponseJsonTwo) => {    
