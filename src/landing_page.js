@@ -189,7 +189,7 @@ function uploadForm(e){
 
    fetch('https://cat-photo.herokuapp.com/upload/', { 
     headers: {
-      'Authorization': 'Token'
+      'Authorization': 'Token ' + `${localStorage.getItem("token")}`
     },
     method: 'POST',
     body: formData
