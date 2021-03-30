@@ -186,14 +186,17 @@ function uploadForm(e){
       console.log(value);
    }
 
-   fetch('https://cat-photo.herokuapp.com/upload/', { // fake commit
+   fetch('https://cat-photo.herokuapp.com/upload/', { 
     headers: {
       'Authorization': 'Token'
     },
     method: 'POST',
     body: formData
   })
-  .then(uploadResponse => uploadResponse.json())
+  .then((uploadResponseFromBackend) => {
+    console.log(uploadResponseFromBackend);
+    return uploadResponseFromBackend.json();
+  })
   .then(data => {
     console.log(data)
   })
