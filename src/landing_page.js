@@ -177,7 +177,7 @@ function uploadForm(e){
     const formData = new FormData(this);
   
     for(const file of inputImage.files) {
-      formData.append("image", file.name);
+      formData.append("image", file);
     }
     
     formData.append("user", "joe");

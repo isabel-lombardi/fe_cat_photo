@@ -21,6 +21,7 @@ const password = document.getElementById('password');
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
   localStorage.removeItem('token');
+  console.log(localStorage.getItem("token"));
   e.preventDefault();
   fetch('https://cat-photo.herokuapp.com/login/', { 
     method: 'post',  
