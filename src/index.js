@@ -46,7 +46,7 @@ loginForm.addEventListener('submit', (e) => {
     })*/
     .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
-      return window.location.href = 'dist/landing_page.html/';
+      return window.location.href = '/landing_page.html/';
     }) 
     .catch((error) => {
       console.log('Request failed', error);
