@@ -93,7 +93,7 @@ registrationForm.addEventListener('submit', (e) => {
   })
   .then((registrationResponseJsonTwo) => {    
     console.log(registrationResponseJsonTwo);
-    return window.location = ('https://cat-photo.netlify.app/');   
+    //return window.location = ('https://cat-photo.netlify.app/');   
   })
   .catch((error) => {
       console.log('Request failed', error);
