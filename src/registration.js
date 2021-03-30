@@ -68,6 +68,8 @@ function getFieldName(input) {
 
 // Event listeners
 registrationForm.addEventListener('submit', (e) => {
+  localStorage.removeItem('id');
+  localStorage.removeItem('username');
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
@@ -91,11 +93,12 @@ registrationForm.addEventListener('submit', (e) => {
     console.log(registrationResponseJson);
     localStorage.setItem('id', registrationResponseJson.id);   
     localStorage.setItem("username", registrationResponseJson.username); 
+    return window.location = ('https://cat-photo.netlify.app/'); 
   })
-  .then((registrationResponseJsonTwo) => {    
+  /*.then((registrationResponseJsonTwo) => {    
     console.log(localStorage.getItem("id"));
-    //return window.location = ('https://cat-photo.netlify.app/');   
-  })
+    return window.location = ('https://cat-photo.netlify.app/');   
+  })*/
   .catch((error) => {
       console.log('Request failed', error);
   });
