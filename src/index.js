@@ -20,8 +20,8 @@ const password = document.getElementById('password');
 
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  fetch('https://cat-photo.herokuapp.com/login/', { // fetch not working
+  // e.preventDefault();
+  fetch('https://cat-photo.herokuapp.com/login/', { 
     method: 'post',  
     headers: {
       'Content-Type': 'application/json',
@@ -39,11 +39,7 @@ loginForm.addEventListener('submit', (e) => {
     .then((loginResponseToCreateToken) => {
       console.log(loginResponseToCreateToken);
       return localStorage.setItem('token', loginResponseToCreateToken.token);
-    })
-    /*.then((loginResponseToTakeToken) => {
-      console.log(loginResponseToTakeToken);
-      return localStorage.getItem('token', loginResponseToTakeToken.token);
-    })*/
+    })    
     .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
       return window.location.href = '/landing_page.html/';
