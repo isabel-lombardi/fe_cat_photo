@@ -89,10 +89,11 @@ registrationForm.addEventListener('submit', (e) => {
   })
   .then((registrationResponseJson) => {
     console.log(registrationResponseJson);
-    return localStorage.setItem('id', registrationResponseJson.id);    
+    localStorage.setItem('id', registrationResponseJson.id);   
+    localStorage.setItem("username", registrationResponseJson.username); 
   })
   .then((registrationResponseJsonTwo) => {    
-    console.log(registrationResponseJsonTwo);
+    console.log(localStorage.getItem("id"));
     //return window.location = ('https://cat-photo.netlify.app/');   
   })
   .catch((error) => {
