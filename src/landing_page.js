@@ -174,7 +174,7 @@ console.log(localStorage.getItem("token"));
 function uploadForm(e){
     e.preventDefault();
     
-    /* const formData = new FormData(this);
+    const formData = new FormData(this);
   
     for(const file of inputImage.files) {
       formData.append("image", file);
@@ -185,17 +185,14 @@ function uploadForm(e){
 
     for (var value of formData.values()) {
       console.log(value);
-    } */
+   }
 
    fetch('https://cat-photo.herokuapp.com/upload/', { 
     headers: {
       'Authorization': 'Token ' + `${localStorage.getItem("token")}`
     },
     method: 'POST',
-    body: JSON.stringify({
-      username: username.value,
-      password: password.value,
-    }),
+    body: formData
   })
   .then((uploadResponseFromBackend) => {
     console.log(uploadResponseFromBackend);
