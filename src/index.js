@@ -41,10 +41,10 @@ loginForm.addEventListener('submit', (e) => {
       console.log(loginResponseToCreateToken);
       return localStorage.setItem('token', loginResponseToCreateToken.token);
     })    
-    .then((loginResponseForRedirect) => {
+    /* .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
       window.location.href = 'landing_page.html';
-    }) 
+    })  */
     .catch((error) => {
       console.log('Request failed', error);
     });
