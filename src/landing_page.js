@@ -189,7 +189,8 @@ function uploadForm(e){
 
    fetch('https://cat-photo.herokuapp.com/upload/', { 
     headers: {
-      'Authorization': 'Token ' + `${localStorage.getItem('token')}`
+      'Authorization': 'Token ' + `${localStorage.getItem('token')}`,
+      'Access-Control-Allow-Origin': 'https://cat-photo.netlify.app/'
     },
     method: 'POST',
     body: formData
