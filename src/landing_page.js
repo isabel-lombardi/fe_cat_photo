@@ -240,7 +240,7 @@ function createSlider(dataResponse) {
   const image = new Image();
   const result = document.createElement('div');
   result.classList.add('result-wrapper');
-    result.innerText = dataResponse[0];
+    result.innerText = dataResponse[i];
   
   
   image.classList.add('image');
