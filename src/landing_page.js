@@ -197,11 +197,7 @@ function uploadForm(e){
     return uploadResponseFromBackend.json();
   })
   .then(data => {
-    console.log(data);
-    data[1][0].forEach(e => {
-      createSlider(e);
-    })
-    
+    createSlider(data[1][0][0]);
     console.log(data[1][0])
     
   })
@@ -240,9 +236,7 @@ function createSlider(dataResponse) {
   const image = new Image();
   const result = document.createElement('div');
   result.classList.add('result-wrapper');
-    result.innerText = dataResponse[i];
-  
-  
+  result.innerText = dataResponse;
   image.classList.add('image');
   // here I give to the image on the slider the same src that comes from the images on dropzone
   image.src = element.src;
