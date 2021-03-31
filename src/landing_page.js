@@ -198,7 +198,10 @@ function uploadForm(e){
   })
   .then(data => {
     console.log(data);
-    createSlider(data[1][0][0]);
+    data[1].forEach(e => {
+      createSlider(e);
+    })
+    
     console.log(data[1][0])
     
   })
@@ -237,7 +240,9 @@ function createSlider(dataResponse) {
   const image = new Image();
   const result = document.createElement('div');
   result.classList.add('result-wrapper');
-  result.innerText = dataResponse;
+    result.innerText = dataResponse[0];
+  
+  
   image.classList.add('image');
   // here I give to the image on the slider the same src that comes from the images on dropzone
   image.src = element.src;
