@@ -197,7 +197,7 @@ function uploadForm(e){
     return uploadResponseFromBackend.json();
   })
   .then(data => {
-    console.log(data[1]);
+    console.log(data[0]);
     data[1][0].forEach(e => {
       createSlider(e);
     })
