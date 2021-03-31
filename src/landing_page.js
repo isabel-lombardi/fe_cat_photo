@@ -23,6 +23,7 @@ const closeMessage = document.querySelector('.close');
 const upload = document.querySelector('.select__area__container');
 let newImage;
 let errorFormat;
+let fileList = [];
 
 const inputImage = document.querySelector('#browse');
 (function init() {
@@ -55,7 +56,7 @@ const inputImage = document.querySelector('#browse');
     function handleDrop(e) {
       let dt = e.dataTransfer
       let files = dt.files
-      console.log(files);
+      fileList.push(files[0]);
       handleFiles(files)
     }
 
@@ -173,10 +174,10 @@ console.log(localStorage.getItem('token'));
 //Fetch       
 function uploadForm(e){
     e.preventDefault();
-    
+    fileList.push(inputImage.files);
     const formData = new FormData(this);
-    
-    for(const file of inputImage.files) {
+    console.log(fileList);
+    for(const file of fileList) {
       formData.append('image', file);
     }
 
