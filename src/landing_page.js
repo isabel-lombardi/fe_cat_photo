@@ -24,6 +24,7 @@ const upload = document.querySelector('.select__area__container');
 let newImage;
 let errorFormat;
 let fileList = [];
+let files;
 
 const inputImage = document.querySelector('#browse');
 (function init() {
@@ -55,8 +56,7 @@ const inputImage = document.querySelector('#browse');
 // take the files you drop from e.dataTransfer and call handle Files function
     function handleDrop(e) {
       let dt = e.dataTransfer
-      let files = dt.files
-      fileList.push(files[0]);
+      files = dt.files;
       handleFiles(files)
     }
 
@@ -173,8 +173,10 @@ function imageCreation() {
 console.log(localStorage.getItem('token'));
 //Fetch       
 function uploadForm(e){
+    fileList = [];
     e.preventDefault();
     fileList.push(inputImage.files[0]);
+    fileList.push(files[0]);
     const formData = new FormData(this);
     console.log(fileList);
     for(const file of fileList) {
