@@ -174,7 +174,7 @@ function uploadForm(e){
     e.preventDefault();
 
     const formData = new FormData(this);
-    console.log(fileList);
+    
     for(const file of inputImage.files[0]) {
       formData.append('image', file);
     }
