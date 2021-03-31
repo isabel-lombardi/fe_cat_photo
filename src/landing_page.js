@@ -198,7 +198,9 @@ function uploadForm(e){
   })
   .then(data => {
     createSlider(data[1][0][0]);
-    console.log(data[1])
+    for(const data of data[1]) {
+      console.log(data[0]);
+    }
     
   })
   .catch(error => {
