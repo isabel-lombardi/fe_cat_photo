@@ -198,10 +198,7 @@ function uploadForm(e){
   })
   .then(data => {
     createSlider(data[1][0][0]);
-    for(const filelist of data[1]) {
-      console.log(filelist);
-      console.log(filelist[0]);
-    }
+    console.log(Object.values(data[1]));
     
   })
   .catch(error => {
