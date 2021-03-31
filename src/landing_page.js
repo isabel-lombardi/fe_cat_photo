@@ -198,7 +198,7 @@ function uploadForm(e){
   })
   .then(data => {
     createSlider(data[1][0][0]);
-    console.log(data[1][0])
+    console.log(data[1])
     
   })
   .catch(error => {
