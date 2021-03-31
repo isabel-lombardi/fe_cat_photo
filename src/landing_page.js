@@ -174,7 +174,7 @@ console.log(localStorage.getItem('token'));
 //Fetch       
 function uploadForm(e){
     e.preventDefault();
-    fileList.push(inputImage.files);
+    fileList.push(inputImage.files[0]);
     const formData = new FormData(this);
     console.log(fileList);
     for(const file of fileList) {
