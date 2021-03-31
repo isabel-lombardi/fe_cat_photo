@@ -196,13 +196,15 @@ function uploadForm(e){
     return uploadResponseFromBackend.json();
   })
   .then(data => {
+    createSlider(data[1][0][0]);
     console.log(data[1][0])
+    
   })
   .catch(error => {
     console.log(error)
   })
 
-  createSlider();
+  
     
       /* if there are more than 0 slides already in the slider (maybe because i uploaded images before)
       it will remove them*/
@@ -210,7 +212,7 @@ function uploadForm(e){
 }
 
 
-function createSlider() {
+function createSlider(dataResponse) {
   if(document.querySelectorAll('.slides-image-container').length > 0) {
     document.querySelectorAll('.slides-image-container').forEach(function(element) {
       element.parentNode.removeChild(element);
@@ -233,7 +235,7 @@ function createSlider() {
   const image = new Image();
   const result = document.createElement('div');
   result.classList.add('result-wrapper');
-
+  result.innerText = dataResponse;
   image.classList.add('image');
   // here I give to the image on the slider the same src that comes from the images on dropzone
   image.src = element.src;
