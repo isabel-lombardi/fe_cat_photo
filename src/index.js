@@ -20,11 +20,13 @@ const password = document.getElementById('password');
 
 // Event Listener for Login function
 loginForm.addEventListener('submit', (e) => {
-  // e.preventDefault();
-  fetch('https://cat-photo.herokuapp.com/login/', { // fetch not working
-    method: 'POST',  
+  localStorage.removeItem('token');
+  e.preventDefault();
+  fetch('https://cat-photo.herokuapp.com/login/', { 
+    method: 'post',  
     headers: {
-      'Authorization': 'Token'
+      'Content-Type': 'application/json',
+      //'Authorization': 'Token'
     },
     body: JSON.stringify({
       username: username.value,
@@ -38,15 +40,11 @@ loginForm.addEventListener('submit', (e) => {
     .then((loginResponseToCreateToken) => {
       console.log(loginResponseToCreateToken);
       return localStorage.setItem('token', loginResponseToCreateToken.token);
-    })
-    .then((loginResponseToTakeToken) => {
-      console.log(loginResponseToTakeToken);
-      return localStorage.getItem('token', loginResponseToTakeToken.token);
-    })
-    .then((loginResponseForRedirect) => {
+    })    
+     .then((loginResponseForRedirect) => {
       console.log(loginResponseForRedirect);
-      return window.location = 'https://cat-photo.netlify.app/landing_page.html';
-    }) 
+      window.location.href = 'landing_page.html';
+    })  
     .catch((error) => {
       console.log('Request failed', error);
     });

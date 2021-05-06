@@ -68,6 +68,8 @@ function getFieldName(input) {
 
 // Event listeners
 registrationForm.addEventListener('submit', (e) => {
+  localStorage.removeItem('id');
+  localStorage.removeItem('username');
   e.preventDefault();
   checkLength(username, 3, 12);
   isValidEmail(email);
@@ -89,11 +91,7 @@ registrationForm.addEventListener('submit', (e) => {
   })
   .then((registrationResponseJson) => {
     console.log(registrationResponseJson);
-    return localStorage.setItem('id', registrationResponseJson.id);    
-  })
-  .then((registrationResponseJsonTwo) => {    
-    console.log(registrationResponseJsonTwo);
-    return window.location = ('https://cat-photo.netlify.app/');   
+    return window.location = ('https://cat-photo.netlify.app/'); 
   })
   .catch((error) => {
       console.log('Request failed', error);
