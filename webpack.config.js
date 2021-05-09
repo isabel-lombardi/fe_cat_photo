@@ -7,9 +7,9 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
   // https://webpack.js.org/concepts/entry-points/#multi-page-application
   entry: {
-    index: './src/index.js',
-    registration: './src/registration.js',
-    landing_page: './src/landing_page.js',
+    index: "./src/index.js",
+    registration: "./src/registration.js",
+    landing_page: "./src/landing_page.js",
   },
   // https://webpack.js.org/concepts/output/
   output: {
@@ -97,18 +97,23 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      template: './src/registration.html',
+      template: "./src/registration.html",
 
       inject: true,
       chunks: ["registration"],
       filename: "registration.html",
     }),
     new HtmlWebpackPlugin({
-        template: './src/landing_page.html',
-        inject: true,
-        chunks: ['landing_page'],
-        filename: 'landing_page.html'
-
+      template: "./src/landing_page.html",
+      inject: true,
+      chunks: ["landing_page"],
+      filename: "landing_page.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/profile.html",
+      inject: true,
+      chunks: ["profile"],
+      filename: "profile.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
