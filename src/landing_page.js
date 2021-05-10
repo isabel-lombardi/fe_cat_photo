@@ -24,6 +24,9 @@ const upload = document.querySelector('.select__area__container');
 let newImage;
 let errorFormat;
 
+
+const filesArray = []
+
 const inputImage = document.querySelector('#browse');
 (function init() {
   
@@ -76,6 +79,8 @@ const inputImage = document.querySelector('#browse');
       if(file.type == 'image/jpeg' || file.type == 'image/png') {
         let dragImage = this.result;
         loadImage(dragImage);
+        console.log(inputImage.files)
+        filesArray.push(file)
       } else {
         errorType();
       }
@@ -85,6 +90,9 @@ const inputImage = document.querySelector('#browse');
 
 // image selection from gallery function
 function selectImage() {
+
+  console.log("selectImage")
+
     if(errorFormat !== undefined) {
         errorFormat.remove();
     }
@@ -173,9 +181,13 @@ console.log(localStorage.getItem('token'));
 function uploadForm(e){
     e.preventDefault();
 
-    const formData = new FormData(this);
+    const formData = new FormData();
+
+    console.log(filesArray)
+
+    if (filesArray.length === 0) return alert("Not enough images")
     
-    for(const file of inputImage.files) {
+    for(const file of filesArray) {
       formData.append('image', file);
     }
 
@@ -183,6 +195,9 @@ function uploadForm(e){
       console.log(value);
     }
 
+    console.log(formData)
+
+    
    fetch('https://cat-photo.herokuapp.com/upload/', { 
     headers: {
       'Authorization': 'Token ' + `${localStorage.getItem('token')}`
